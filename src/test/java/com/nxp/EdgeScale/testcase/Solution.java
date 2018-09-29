@@ -50,7 +50,7 @@ public class Solution extends CaseBase {
 		logger.info("添加tag开始");
 		solutionPagePro.addNewTag(new ProUtil(Common.PARAMETER).getPro("solution_add_tag"));
 		logger.info("添加tag结束");
-		solutionPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		solutionPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("添加tag成功");
 	}
 
@@ -59,7 +59,7 @@ public class Solution extends CaseBase {
 		logger.info("删除tag开始");
 		solutionPagePro.deleteTag();
 		logger.info("删除tag结束");
-		solutionPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		solutionPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除tag成功");
 	}
 
@@ -68,7 +68,7 @@ public class Solution extends CaseBase {
 		logger.info("删除solution开始");
 		solutionPagePro.deleteSolution();
 		logger.info("删除solution结束");
-		solutionPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		solutionPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除solution成功");
 	}
 
@@ -77,7 +77,7 @@ public class Solution extends CaseBase {
 		logger.info("部署solution开始");
 		solutionPagePro.deploySolution();
 		logger.info("部署solution结束");
-		solutionPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		solutionPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("部署solution成功");
 	}
 
@@ -93,7 +93,7 @@ public class Solution extends CaseBase {
 		logger.info("编辑solution开始");
 		solutionPagePro.editSolution();
 		logger.info("编辑solution结束");
-		solutionPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		solutionPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("编辑solution成功");
 	}
 

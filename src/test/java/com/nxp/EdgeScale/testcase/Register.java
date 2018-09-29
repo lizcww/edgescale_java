@@ -38,7 +38,7 @@ public class Register extends CaseBase {
 		applyPagePro.register(proUtil.getPro("firstName"), proUtil.getPro("lastName"), proUtil.getPro("email"),
 				proUtil.getPro("companyName"));
 		logger.info("注册结束");
-		applyPagePro.vertifyNotice(proUtil.getPro("register_fail_notice"));
+		applyPagePro.verifyNotice(proUtil.getPro("register_fail_notice"));
 		logger.info("注册失败");
 	}
 

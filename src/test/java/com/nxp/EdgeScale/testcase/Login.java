@@ -43,17 +43,17 @@ public class Login extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		loginPagePro.login(proUtil.getPro("username"), proUtil.getPro("password"));
 		logger.info("登录结束");
-		loginPagePro.vertifyLoginNotice(proUtil.getPro("login_success_notice"));
+		loginPagePro.verifyLoginNotice(proUtil.getPro("login_success_notice"));
 		try {
 			Thread.sleep(8000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		assertTrue(devicePagePro.vertifyUsername(proUtil.getPro("username")));
+		assertTrue(devicePagePro.verifyUsername(proUtil.getPro("username")));
 		logger.info("登录成功");
 		devicePagePro.logout();
 		logger.info("退出登录");
-		loginPagePro.vertifyLoginNotice(proUtil.getPro("logout_notice"));
+		loginPagePro.verifyLoginNotice(proUtil.getPro("logout_notice"));
 		logger.info("退出登录成功");
 	}
 
@@ -64,7 +64,7 @@ public class Login extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		loginPagePro.login(proUtil.getPro("username"), proUtil.getPro("wrongPassword"));
 		logger.info("登录结束");
-		loginPagePro.vertifyLoginNotice(proUtil.getPro("login_fail_notice"));
+		loginPagePro.verifyLoginNotice(proUtil.getPro("login_fail_notice"));
 		logger.info("登录失败");
 	}
 

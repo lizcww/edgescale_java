@@ -38,7 +38,7 @@ public class VendorPagePro {
 	 * 
 	 * @param rightNotice
 	 */
-	public void vertifyRightNotice(String rightNotice) {
+	public void verifyRightNotice(String rightNotice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("login_noitce")));
 		String right = vph.getPageRightNotice();

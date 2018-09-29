@@ -34,7 +34,7 @@ public class LoginPagePro {
 	/**
 	 * 验证登录提示语
 	 */
-	public void vertifyLoginNotice(String notice) {
+	public void verifyLoginNotice(String notice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("login_noitce")));
 		String loginNotice = lph.getLoginNotice();

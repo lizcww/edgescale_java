@@ -53,7 +53,7 @@ public class Model extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		modelPagePro.editModel(proUtil.getPro("edit_model_modelNo"));
 		logger.info("编辑model结束");
-		modelPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		modelPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("编辑model成功");
 	}
 
@@ -62,7 +62,7 @@ public class Model extends CaseBase {
 		logger.info("删除model开始");
 		modelPagePro.deleteModel();
 		logger.info("删除model结束");
-		modelPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		modelPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除model成功");
 	}
 

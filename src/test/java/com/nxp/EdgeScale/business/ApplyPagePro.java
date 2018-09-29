@@ -43,7 +43,7 @@ public class ApplyPagePro {
 	/**
 	 * 验证注册提示语
 	 */
-	public void vertifyNotice(String notice) {
+	public void verifyNotice(String notice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("register_notice")));
 		String registerNotice = aph.getNotice();

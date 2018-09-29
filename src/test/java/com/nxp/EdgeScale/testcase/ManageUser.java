@@ -46,7 +46,7 @@ public class ManageUser extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		manageUserPagePro.createUser(proUtil.getPro("create_user_userName"), proUtil.getPro("create_user_email"));
 		logger.info("创建user结束");
-		manageUserPagePro.vertifyTopNotice(new ProUtil(Common.PARAMETER).getPro("create_user_success_notice"));
+		manageUserPagePro.verifyTopNotice(new ProUtil(Common.PARAMETER).getPro("create_user_success_notice"));
 		logger.info("创建user成功");
 	}
 
@@ -56,7 +56,7 @@ public class ManageUser extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		manageUserPagePro.setLimit(proUtil.getPro("user_limitType"), proUtil.getPro("user_maxLimit"));
 		logger.info("user limit结束");
-		manageUserPagePro.vertifyTopNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		manageUserPagePro.verifyTopNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("user limit成功");
 	}
 

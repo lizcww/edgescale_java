@@ -55,7 +55,7 @@ public class CreateDevicePagePro {
 	 * 
 	 * @param notice
 	 */
-	public void vertifyNotice(String notice) {
+	public void verifyNotice(String notice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("login_noitce")));
 		String noticeText = cdph.getNoticeText();

@@ -30,7 +30,7 @@ public class DevicePagePro {
 	 * 
 	 * @param username
 	 */
-	public boolean vertifyUsername(String username) {
+	public boolean verifyUsername(String username) {
 		if (username == null) {
 			return false;
 		}
@@ -79,7 +79,7 @@ public class DevicePagePro {
 	 * 
 	 * @param topNotice
 	 */
-	public void vertifyTopNotice(String topNotice) {
+	public void verifyTopNotice(String topNotice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("device_page_top_notice")));
 		String top = dph.getDevicePageTopNotice();
@@ -105,7 +105,7 @@ public class DevicePagePro {
 	 * 
 	 * @param rightNotice
 	 */
-	public void vertifyRightNotice(String rightNotice) {
+	public void verifyRightNotice(String rightNotice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("login_noitce")));
 		String right = dph.getDevicePageRightNotice();

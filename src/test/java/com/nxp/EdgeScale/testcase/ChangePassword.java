@@ -41,7 +41,7 @@ public class ChangePassword extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		devicePagePro.changePassword(proUtil.getPro("oldPassword"), proUtil.getPro("newPassword"));
 		logger.info("更改密码结束");
-		devicePagePro.vertifyTopNotice(proUtil.getPro("changePassword_notice"));
+		devicePagePro.verifyTopNotice(proUtil.getPro("changePassword_notice"));
 		logger.info("更改密码成功");
 	}
 
@@ -52,7 +52,7 @@ public class ChangePassword extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		devicePagePro.changePassword(proUtil.getPro("newPassword"), proUtil.getPro("oldPassword"));
 		logger.info("还原密码结束");
-		devicePagePro.vertifyTopNotice(proUtil.getPro("changePassword_notice"));
+		devicePagePro.verifyTopNotice(proUtil.getPro("changePassword_notice"));
 		logger.info("还原密码成功");
 	}
 	

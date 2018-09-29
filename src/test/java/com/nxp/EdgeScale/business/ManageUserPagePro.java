@@ -42,7 +42,7 @@ public class ManageUserPagePro {
 	 * 
 	 * @param topNotice
 	 */
-	public void vertifyTopNotice(String topNotice) {
+	public void verifyTopNotice(String topNotice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("device_page_top_notice")));
 		String top = mph.getPageTopNotice();

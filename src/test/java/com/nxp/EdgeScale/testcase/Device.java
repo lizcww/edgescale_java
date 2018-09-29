@@ -56,7 +56,7 @@ public class Device extends CaseBase {
 		logger.info("添加tag开始");
 		devicePagePro.addTagToDevice(new ProUtil(Common.PARAMETER).getPro("device_add_tag_newTag"));
 		logger.info("添加tag结束");
-		devicePagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		devicePagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("添加tag成功");
 	}
 
@@ -65,7 +65,7 @@ public class Device extends CaseBase {
 		logger.info("删除tag开始");
 		devicePagePro.deleteTag();
 		logger.info("删除tag结束");
-		devicePagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		devicePagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除tag成功");
 	}
 
@@ -79,7 +79,7 @@ public class Device extends CaseBase {
 		logger.info("取消注册device开始");
 		devicePagePro.inactiveDevice();
 		logger.info("取消注册device结束");
-		devicePagePro.vertifyTopNotice(new ProUtil(Common.PARAMETER).getPro("device_inactive_active_notice"));
+		devicePagePro.verifyTopNotice(new ProUtil(Common.PARAMETER).getPro("device_inactive_active_notice"));
 		logger.info("取消注册device成功");
 	}
 
@@ -93,7 +93,7 @@ public class Device extends CaseBase {
 		logger.info("注册device开始");
 		devicePagePro.activeDevice();
 		logger.info("注册device结束");
-		devicePagePro.vertifyTopNotice(new ProUtil(Common.PARAMETER).getPro("device_inactive_active_notice"));
+		devicePagePro.verifyTopNotice(new ProUtil(Common.PARAMETER).getPro("device_inactive_active_notice"));
 		logger.info("注册device成功");
 	}
 
@@ -102,7 +102,7 @@ public class Device extends CaseBase {
 		logger.info("bind tag开始");
 		devicePagePro.bingTag(new ProUtil(Common.PARAMETER).getPro("device_bind_tag_tag"));
 		logger.info("bind tag结束");
-		devicePagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		devicePagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("bind tag成功");
 	}
 
@@ -111,7 +111,7 @@ public class Device extends CaseBase {
 		logger.info("删除device开始");
 		devicePagePro.deleteDevice();
 		logger.info("删除device结束");
-		devicePagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		devicePagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除device成功");
 	}
 

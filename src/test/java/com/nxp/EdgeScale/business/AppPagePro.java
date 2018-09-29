@@ -46,7 +46,7 @@ public class AppPagePro {
 	 * 
 	 * @param rightNotice
 	 */
-	public void vertifyRightNotice(String rightNotice) {
+	public void verifyRightNotice(String rightNotice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("login_noitce")));
 		String right = aph.getPageRightNotice();
@@ -59,7 +59,7 @@ public class AppPagePro {
 	 * 
 	 * @param topNotice
 	 */
-	public void vertifyTopNotice(String topNotice) {
+	public void verifyTopNotice(String topNotice) {
 		WebDriverWait wait = new WebDriverWait(driverBase.driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(GetByLocator.getLocator("device_page_top_notice")));
 		String top = aph.getDevicePageTopNotice();

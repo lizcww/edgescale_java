@@ -14,3 +14,9 @@ log4j          1.2.17
 
 项目说明：
 该项目采用selenium + java + Maven + TestNG + Jenkins的测试环境，使用 page object架构模式，一共40条测试用例。元素定位和参数用配置文件的方式保存。
+
+preparation:
+at least 2 devices, each has more than 2 tags
+at least 3 apps, permission of which are private
+at least 3 solution, each has more than 2 tags
+at least 2 vendor 

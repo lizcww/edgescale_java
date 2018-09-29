@@ -42,7 +42,7 @@ public class CreateDevice extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		createDevicePagePro.createDevice(proUtil.getPro("create_device_SN"), proUtil.getPro("create_device_model"));
 		logger.info("创建device结束");
-		createDevicePagePro.vertifyNotice(proUtil.getPro("login_success_notice"));
+		createDevicePagePro.verifyNotice(proUtil.getPro("login_success_notice"));
 		logger.info("创建device成功");
 		try {
 			Thread.sleep(3000);

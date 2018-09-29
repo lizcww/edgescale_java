@@ -49,7 +49,7 @@ public class CreateSolution extends CaseBase {
 				proUtil.getPro("create_solution_solutionName"), proUtil.getPro("create_solution_version"),
 				proUtil.getPro("create_solution_imageUrl"));
 		logger.info("创建solution结束");
-		createSolutionPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		createSolutionPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("创建solution成功");
 	}
 	

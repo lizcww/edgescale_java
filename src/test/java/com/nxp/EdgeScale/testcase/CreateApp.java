@@ -1,5 +1,6 @@
 package com.nxp.EdgeScale.testcase;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -44,10 +45,13 @@ public class CreateApp extends CaseBase {
 	public void testCreateDevice() {
 		logger.info("创建app开始");
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
-		createAppPagePro.createApp(proUtil.getPro("create_app_appName"),proUtil.getPro("create_app_desc"),proUtil.getPro("create_app_image_path"), proUtil.getPro("create_app_registry"),
+		createAppPagePro.createApp(proUtil.getPro("create_app_appName"),
+				proUtil.getPro("create_app_desc"),
+				System.getProperty("user.dir") + File.separator + "images" + File.separator + proUtil.getPro("create_app_image_path"), 
+				proUtil.getPro("create_app_registry"),
 				proUtil.getPro("create_app_imageName"));
 		logger.info("创建app结束");
-		createAppPagePro.vertifyRightNotice(proUtil.getPro("login_success_notice"));
+		createAppPagePro.verifyRightNotice(proUtil.getPro("login_success_notice"));
 		logger.info("创建app成功");
 	}
 	

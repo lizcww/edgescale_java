@@ -52,7 +52,7 @@ public class Vendor extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		vendorPagePro.createVendor(proUtil.getPro("vendor_create_name"));
 		logger.info("创建vendor结束");
-		vendorPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		vendorPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("创建vendor成功");
 	}
 
@@ -62,7 +62,7 @@ public class Vendor extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		vendorPagePro.editVendor(proUtil.getPro("vendor_edit_name"));
 		logger.info("修改vendor结束");
-		vendorPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		vendorPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("修改vendor成功");
 	}
 
@@ -71,7 +71,7 @@ public class Vendor extends CaseBase {
 		logger.info("删除vendor开始");
 		vendorPagePro.deleteVendor();
 		logger.info("删除vendor结束");
-		vendorPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		vendorPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除vendor成功");
 	}
 

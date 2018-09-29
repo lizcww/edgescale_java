@@ -47,7 +47,7 @@ public class CreateModel extends CaseBase {
 		createModelPagePro.createModel(proUtil.getPro("create_model_modelNo"), proUtil.getPro("create_model_type"),
 				proUtil.getPro("create_model_platform"), proUtil.getPro("create_model_vendor"));
 		logger.info("创建model结束");
-		createModelPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		createModelPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("创建model成功");
 	}
 

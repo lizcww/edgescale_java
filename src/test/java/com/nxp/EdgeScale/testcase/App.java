@@ -66,7 +66,7 @@ public class App extends CaseBase {
 		logger.info("删除app开始");
 		appPagePro.deleteApp();
 		logger.info("删除app结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除app成功");
 	}
 
@@ -75,7 +75,7 @@ public class App extends CaseBase {
 		logger.info("deploy app开始");
 		appPagePro.deployApp();
 		logger.info("deploy app结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("deploy app成功");
 	}
 
@@ -84,7 +84,7 @@ public class App extends CaseBase {
 		logger.info("deploy public app开始");
 		appPagePro.deployPublicApp();
 		logger.info("deploy public app结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("deploy public app成功");
 	}
 
@@ -93,7 +93,7 @@ public class App extends CaseBase {
 		logger.info("App Mutiple Deploy开始");
 		appMutipleDeployPagePro.mutipleDeployApp();
 		logger.info("App Mutiple Deploy结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("App Mutiple Deploy成功");
 	}
 
@@ -103,7 +103,7 @@ public class App extends CaseBase {
 		logger.info("更新app document开始");
 		appDocumentPagePro.updateAppDocument(proUtil.getPro("app_document_content"));
 		logger.info("更新app document结束");
-		appPagePro.vertifyTopNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyTopNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("更新app document成功");
 	}
 
@@ -113,7 +113,7 @@ public class App extends CaseBase {
 		logger.info("App Mutiple Deploy开始");
 		appEditInfoPagePro.editAppInfo(proUtil.getPro("app_edit_appName"), proUtil.getPro("app_edit_appDesc"));
 		logger.info("App Mutiple Deploy结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("App Mutiple Deploy成功");
 	}
 
@@ -124,7 +124,7 @@ public class App extends CaseBase {
 		appEditInfoPagePro.appAddDocker(proUtil.getPro("app_add_docker_registry"),
 				proUtil.getPro("app_add_docker_imageName"), proUtil.getPro("app_add_docker_version"));
 		logger.info("App add docker结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("App add docker成功");
 	}
 
@@ -133,7 +133,7 @@ public class App extends CaseBase {
 		logger.info("change app permission开始");
 		appEditInfoPagePro.changeAppPermission();
 		logger.info("change app permission结束");
-		appPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		appPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("change app permission成功");
 	}
 

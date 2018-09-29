@@ -43,7 +43,7 @@ public class Mirror extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		mirrorPagePro.createMirror(proUtil.getPro("mirrorName"), proUtil.getPro("mirror_description"));
 		logger.info("创建mirror结束");
-		mirrorPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		mirrorPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("创建mirror成功");
 	}
 
@@ -52,7 +52,7 @@ public class Mirror extends CaseBase {
 		logger.info("删除mirror开始");
 		mirrorPagePro.deleteMirror();
 		logger.info("删除mirror结束");
-		mirrorPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		mirrorPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("删除mirror成功");
 	}
 
@@ -62,7 +62,7 @@ public class Mirror extends CaseBase {
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		mirrorPagePro.editMirror(proUtil.getPro("edit_mirrorName"), proUtil.getPro("edit_mirror_description"));
 		logger.info("修改mirror结束");
-		mirrorPagePro.vertifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
+		mirrorPagePro.verifyRightNotice(new ProUtil(Common.PARAMETER).getPro("login_success_notice"));
 		logger.info("修改mirror成功");
 	}
 

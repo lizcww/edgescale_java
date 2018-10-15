@@ -69,7 +69,7 @@ public class DriverBase {
         String currentPath = System.getProperty("user.dir"); // get current work
         File scrFile = drivername.getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(scrFile, new File(currentPath + "\\" + path));
+            FileUtils.copyFile(scrFile, new File(currentPath + File.separator + path));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

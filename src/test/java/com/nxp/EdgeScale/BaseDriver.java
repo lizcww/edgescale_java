@@ -1,5 +1,7 @@
 package com.nxp.EdgeScale;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -19,7 +21,7 @@ public class BaseDriver {
 	public void beforeClass() {
 		System.out.println("-----  beforeClass  -----");
 		// 初始化driver
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "drivers" + File.separator + "chromedriver.exe");
 		driver = new ChromeDriver();
 	}
 	

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.ManageUserPageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class ManageUserPagePro {
 
@@ -27,14 +28,11 @@ public class ManageUserPagePro {
 	 */
 	public void createUser(String userName, String email) {
 		mph.clickCreateUserButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		mph.sendKeysUserNameInput(userName);
 		mph.sendKeysEmailInput(email);
 		mph.clickCreateUserSubmitInput();
+		ThreadTime.sleep(5000);
 	}
 
 	/**
@@ -57,11 +55,7 @@ public class ManageUserPagePro {
 	 */
 	public void setLimit(String limitType, String maxLimit) {
 		mph.clickSettingButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		mph.clickLimitTypeInput();
 		mph.clickLimitTypeInputList(limitType);
 		mph.sendKeysMaxLimitInput(maxLimit);

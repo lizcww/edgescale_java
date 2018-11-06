@@ -3,6 +3,7 @@ package com.nxp.EdgeScale.testcase;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -23,15 +24,17 @@ public class Register extends CaseBase {
 
 	private static Logger logger = Logger.getLogger(Register.class);
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void init() {
+		PropertyConfigurator.configure("log4j.properties");
 		this.driverBase = initDriver(Common.BROWSER);
 		driverBase.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		applyPagePro = new ApplyPagePro(driverBase);
 	}
 
-	@Test
+	@Test(groups = {"register"})
 	public void testRegisterWithExistEmail() {
+		PropertyConfigurator.configure("log4j.properties");
 		logger.info("注册开始");
 		driverBase.get(Url.BASE_URL + Url.REGISTER);
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
@@ -42,7 +45,7 @@ public class Register extends CaseBase {
 		logger.info("注册失败");
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void close() {
 		driverBase.close();
 	}

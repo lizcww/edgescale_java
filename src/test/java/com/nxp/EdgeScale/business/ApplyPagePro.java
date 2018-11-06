@@ -8,8 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.ApplyPageHandle;
-import com.nxp.EdgeScale.handle.LoginPageHandle;
-import com.nxp.EdgeScale.testcase.Login;
 import com.nxp.EdgeScale.util.GetByLocator;
 
 public class ApplyPagePro {

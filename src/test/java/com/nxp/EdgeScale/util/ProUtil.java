@@ -8,11 +8,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import com.nxp.EdgeScale.Common;
+import com.nxp.EdgeScale.page.CreateModelPage;
 
 public class ProUtil {
 	private Properties prop;
 	private String filePaht;
+	private static Logger logger = Logger.getLogger(CreateModelPage.class);
 
 	/**
 	 * 构造方法
@@ -20,6 +25,7 @@ public class ProUtil {
 	public ProUtil(String filePath) {
 		this.filePaht = filePath;
 		this.prop = readProperties();
+		PropertyConfigurator.configure("log4j.properties");
 	}
 
 	/**
@@ -46,7 +52,7 @@ public class ProUtil {
 			String username = prop.getProperty(key);
 			return username;
 		} else {
-			System.out.println("你获取key值不对");
+			logger.error("could not find this key in propertis: " + key);
 			return "";
 		}
 	}

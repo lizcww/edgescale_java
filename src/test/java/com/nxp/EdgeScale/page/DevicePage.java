@@ -103,8 +103,8 @@ public class DevicePage extends BasePage {
 	 * 
 	 * @return
 	 */
-	public WebElement getDeviceNewTagButton() {
-		return element(GetByLocator.getLocator("device_new_tag_button"));
+	public WebElement getDeviceNewTagButton(int device_num) {
+		return element(GetByLocator.getLocator("device_new_tag_button_" + device_num));
 	}
 
 	/**

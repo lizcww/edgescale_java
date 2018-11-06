@@ -11,6 +11,7 @@ import com.nxp.EdgeScale.handle.LoginPageHandle;
 import com.nxp.EdgeScale.handle.SolutionPageHandle;
 import com.nxp.EdgeScale.testcase.Login;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class SolutionPagePro {
 
@@ -57,11 +58,7 @@ public class SolutionPagePro {
 	 */
 	public void deleteSolution() {
 		sph.clickSolutionDeleteButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		sph.clickSolutionDeleteConfirmButton();
 	}
 
@@ -70,24 +67,12 @@ public class SolutionPagePro {
 	 */
 	public void deploySolution() {
 		sph.clickSolutionDeployButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		sph.clickQueryDeviceButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		sph.clickDeviceCheckbox();
 		sph.clickNextStepButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		sph.clickDeployButton();
 	}
 
@@ -96,20 +81,12 @@ public class SolutionPagePro {
 	 */
 	public void downImage() {
 		sph.clickDownButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 	}
 
 	public void editSolution() {
 		sph.clickEditButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		sph.clickSolutionPermissionButton();
 		sph.clickSolutionEditSubmitButton();
 	}

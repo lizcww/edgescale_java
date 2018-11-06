@@ -8,15 +8,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.AppPageHandle;
-import com.nxp.EdgeScale.handle.CreateAppPageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class AppPagePro {
 
 	private AppPageHandle aph;
 	private DriverBase driverBase;
 
-	private static Logger logger = Logger.getLogger(DevicePagePro.class);
+	private static Logger logger = Logger.getLogger(AppPagePro.class);
 
 	public AppPagePro(DriverBase driverBase) {
 		this.driverBase = driverBase;
@@ -25,20 +25,11 @@ public class AppPagePro {
 
 	public void deleteApp() {
 		aph.clickMyAppButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		aph.clickAppDeleteButton();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		aph.clickAppDeleteConfirmationButton();
+		ThreadTime.sleep(3000);
 	}
 
 	/**
@@ -72,17 +63,9 @@ public class AppPagePro {
 	 */
 	public void deployApp() {
 		aph.clickMyAppButton();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(4000);
 		aph.clickAppDelopyButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aph.clickAppDelopyDeviceCheckbox();
 		aph.clickDeployAppButton();
 	}
@@ -92,11 +75,7 @@ public class AppPagePro {
 	 */
 	public void deployPublicApp() {
 		aph.clickPublicAppDeploy();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aph.clickAppDelopyDeviceCheckbox();
 		aph.clickDeployAppButton();
 	}

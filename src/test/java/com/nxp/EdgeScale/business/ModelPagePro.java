@@ -9,6 +9,7 @@ import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.CreateModelPageHandle;
 import com.nxp.EdgeScale.handle.ModelPageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class ModelPagePro {
 
@@ -29,13 +30,11 @@ public class ModelPagePro {
 	 */
 	public void editModel(String newModelNo) {
 		mph.clickModelEditButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		cmph.sendKeysModelNoInput(newModelNo);
+		ThreadTime.sleep(3000);
 		cmph.clickModelSubmit();
+		ThreadTime.sleep(1000);
 	}
 
 	/**
@@ -43,12 +42,9 @@ public class ModelPagePro {
 	 */
 	public void deleteModel() {
 		mph.clickModelDeleteButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		mph.clickModelDeleteConfirmButton();
+		ThreadTime.sleep(1000);
 	}
 
 	/**
@@ -70,12 +66,9 @@ public class ModelPagePro {
 	 */
 	public void findModelsByModel(String model) {
 		mph.sendKeysFindByModelInput(model);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		mph.clickFindModelsButton();
+		ThreadTime.sleep(1000);
 	}
 
 	/**
@@ -85,12 +78,9 @@ public class ModelPagePro {
 	 */
 	public void findModelsByType(String type) {
 		mph.sendKeysFindByTypeInput(type);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		mph.clickFindModelsButton();
+		ThreadTime.sleep(1000);
 	}
 
 	/**
@@ -100,12 +90,9 @@ public class ModelPagePro {
 	 */
 	public void findModelsByPlatform(String platform) {
 		mph.sendKeysFindByPlatformInput(platform);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		mph.clickFindModelsButton();
+		ThreadTime.sleep(1000);
 	}
 
 	/**
@@ -115,11 +102,8 @@ public class ModelPagePro {
 	 */
 	public void findModelsByVendor(String vendor) {
 		mph.sendKeysFindByVendorInput(vendor);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		mph.clickFindModelsButton();
+		ThreadTime.sleep(1000);
 	}
 }

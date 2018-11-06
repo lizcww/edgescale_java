@@ -16,10 +16,19 @@ public class HandleCookie {
 		pro = new ProUtil(Common.COOKIE);
 	}
 
-	public void setCookie() {
-		String token = pro.getPro("token");
+	public void setCookie_commonUser1() {
+		String token = pro.getPro("token_common_user_1");
 		Cookie cookie = new Cookie("token", token, Common.WEB_BASE, "/", null);
-		String username = pro.getPro("username");
+		String username = pro.getPro("username_common_user_1");
+		Cookie cookie2 = new Cookie("username", username, Common.WEB_BASE, "/", null);
+		driver.setCookie(cookie);
+		driver.setCookie(cookie2);
+	}
+	
+	public void setCookie_rootUser1() {
+		String token = pro.getPro("token_root_user_1");
+		Cookie cookie = new Cookie("token", token, Common.WEB_BASE, "/", null);
+		String username = pro.getPro("username_root_user_1");
 		Cookie cookie2 = new Cookie("username", username, Common.WEB_BASE, "/", null);
 		driver.setCookie(cookie);
 		driver.setCookie(cookie2);

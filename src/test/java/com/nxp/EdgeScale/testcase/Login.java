@@ -5,6 +5,7 @@ import static org.testng.Assert.assertTrue;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -18,6 +19,7 @@ import com.nxp.EdgeScale.business.DevicePagePro;
 import com.nxp.EdgeScale.business.LoginPagePro;
 import com.nxp.EdgeScale.util.ProUtil;
 import com.nxp.EdgeScale.util.TestngListenerScreen;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 @Listeners({ TestngListenerScreen.class })
 public class Login extends CaseBase {
@@ -28,47 +30,44 @@ public class Login extends CaseBase {
 
 	private static Logger logger = Logger.getLogger(Login.class);
 
-	@BeforeClass
+	@BeforeClass(alwaysRun = true)
 	public void init() {
+		PropertyConfigurator.configure("log4j.properties");
 		this.driverBase = initDriver(Common.BROWSER);
 		driverBase.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		loginPagePro = new LoginPagePro(driverBase);
 		devicePagePro = new DevicePagePro(driverBase);
 	}
 
-	@Test
+	@Test(groups = {"login"})
 	public void testLogin() {
-		logger.info("登录开始");
+		logger.info("testLogin start...");
 		driverBase.get(Url.BASE_URL + Url.LOGIN);
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		loginPagePro.login(proUtil.getPro("username"), proUtil.getPro("password"));
-		logger.info("登录结束");
-		loginPagePro.verifyLoginNotice(proUtil.getPro("login_success_notice"));
-		try {
-			Thread.sleep(8000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		logger.info("testLogin end!");
+		//loginPagePro.verifyLoginNotice(proUtil.getPro("login_success_notice"));
+		ThreadTime.sleep(8000);
 		assertTrue(devicePagePro.verifyUsername(proUtil.getPro("username")));
-		logger.info("登录成功");
+		logger.info("testLogin succeed!");
 		devicePagePro.logout();
-		logger.info("退出登录");
+		logger.info("logout...");
 		loginPagePro.verifyLoginNotice(proUtil.getPro("logout_notice"));
-		logger.info("退出登录成功");
+		logger.info("logout succeed!");
 	}
 
-	@Test
+	@Test(groups = {"login"})
 	public void testLoginFail() {
-		logger.info("登录开始");
+		logger.info("testLoginFail start...");
 		driverBase.get(Url.BASE_URL + Url.LOGIN);
 		ProUtil proUtil = new ProUtil(Common.PARAMETER);
 		loginPagePro.login(proUtil.getPro("username"), proUtil.getPro("wrongPassword"));
-		logger.info("登录结束");
+		logger.info("testLoginFail end!");
 		loginPagePro.verifyLoginNotice(proUtil.getPro("login_fail_notice"));
-		logger.info("登录失败");
+		logger.info("login fail!");
 	}
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void close() {
 		driverBase.close();
 	}

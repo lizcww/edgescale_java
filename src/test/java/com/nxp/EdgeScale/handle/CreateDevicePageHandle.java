@@ -33,6 +33,10 @@ public class CreateDevicePageHandle {
 	public void clickSubmitButton() {
 		cdph.click(cdph.getSubmitButton());
 	}
+	
+	public void clickCancelDownload() {
+		cdph.click(cdph.getCancelDownloadCertificate());
+	}
 
 	public String getNoticeText() {
 		return cdph.getNotice().getText();

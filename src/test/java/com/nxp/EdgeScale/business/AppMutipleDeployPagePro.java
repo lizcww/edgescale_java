@@ -3,15 +3,13 @@ package com.nxp.EdgeScale.business;
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.AppMutipleDeployPageHandle;
 import com.nxp.EdgeScale.handle.AppPageHandle;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class AppMutipleDeployPagePro {
 
 	private AppMutipleDeployPageHandle amdph;
 	private AppPageHandle aph;
-	private DriverBase driverBase;
-
 	public AppMutipleDeployPagePro(DriverBase driverBase) {
-		this.driverBase = driverBase;
 		amdph = new AppMutipleDeployPageHandle(driverBase);
 		aph = new AppPageHandle(driverBase);
 	}
@@ -21,33 +19,17 @@ public class AppMutipleDeployPagePro {
 	 */
 	public void mutipleDeployApp() {
 		aph.clickAppBatchDeployButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		amdph.clickAppMutipleDeployCheckbox1();
 		amdph.clickAppMutipleDeployCheckbox2();
 		amdph.clickAppMutipleDeployNextStepButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		amdph.clickAppMutipleDeployChooseAppCheckbox1();
 		amdph.clickAppMutipleDeployChooseAppCheckbox2();
 		amdph.clickAppMutipleDeployNextStepDeployConfigButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		amdph.clickAppMutipleDeployNextStepPreviewButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		amdph.clickAppMutipleDeployNextStepDeployButton();
 	}
 }

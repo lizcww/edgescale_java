@@ -12,6 +12,7 @@ import com.nxp.EdgeScale.handle.DevicePageHandle;
 import com.nxp.EdgeScale.handle.LoginPageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
 import com.nxp.EdgeScale.util.ProUtil;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class DevicePagePro {
 
@@ -46,11 +47,7 @@ public class DevicePagePro {
 	 */
 	public void logout() {
 		dph.clickDownArrow();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		dph.clickLogoutButton();
 	}
 
@@ -66,12 +63,9 @@ public class DevicePagePro {
 		dph.sendKeysOldPassword(oldPassword);
 		dph.sendKeysNewPassword(newPassword);
 		dph.sendKeysEnterPassword(newPassword);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		dph.clickChangePasswordEnterButton();
+		ThreadTime.sleep(5000);
 	}
 
 	/**
@@ -92,11 +86,7 @@ public class DevicePagePro {
 	 */
 	public void deleteDevice() {
 		dph.clickDeviceDeleteButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		dph.clickDeviceDeleteWindowButton();
 	}
 
@@ -118,8 +108,8 @@ public class DevicePagePro {
 	 * 
 	 * @param tag
 	 */
-	public void addTagToDevice(String tag) {
-		dph.clickDeviceNewTagButton();
+	public void addTagToDevice(int device_num, String tag) {
+		dph.clickDeviceNewTagButton(device_num);
 		dph.sendkeysDeviceNewTagInput(tag);
 	}
 
@@ -136,12 +126,9 @@ public class DevicePagePro {
 	public void inactiveDevice() {
 		if ("Inactive".equals(dph.getDeviceInactiveAcitveButtonText())) {
 			dph.clickDeviceInactiveAcitveButton();
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			ThreadTime.sleep(3000);
 			dph.clickDeviceInactiveAcitveWindow();
+			ThreadTime.sleep(3000);
 		} else {
 			System.out.println("该device已经处于非注册状态，不能取消注册");
 		}
@@ -153,11 +140,7 @@ public class DevicePagePro {
 	public void activeDevice() {
 		if ("Active".equals(dph.getDeviceInactiveAcitveButtonText())) {
 			dph.clickDeviceInactiveAcitveButton();
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			ThreadTime.sleep(5000);
 			dph.clickDeviceInactiveAcitveWindow();
 		} else {
 			System.out.println("该device已经处于注册状态，不能注册");
@@ -172,19 +155,14 @@ public class DevicePagePro {
 	public void bingTag(String tag) {
 		dph.clickDeviceCheckbox();
 		dph.clickDeviceBindTagButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		dph.sendKeysBindTagInput(tag);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
+		//dph.sendKeysBindTagInput(tag);
+		dph.clickBindTagInput(tag);
+		ThreadTime.sleep(5000);
 		dph.clickBindTagInputList(tag);
+		ThreadTime.sleep(5000);
 		dph.clickBindTagSubmitButton();
+		ThreadTime.sleep(5000);
 	}
 
 }

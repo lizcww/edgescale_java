@@ -3,6 +3,7 @@ package com.nxp.EdgeScale.business;
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.AppDocumentPageHandle;
 import com.nxp.EdgeScale.handle.AppPageHandle;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class AppDocumentPagePro {
 
@@ -23,20 +24,14 @@ public class AppDocumentPagePro {
 	 */
 	public void updateAppDocument(String content) {
 		aph.clickMyAppButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		aph.clickAppDocumentButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(7000);
 		adph.clickAppDocumentContent();
+		ThreadTime.sleep(3000);
 		adph.clearAppDocumentContent();
 		adph.sendKeysAppDocumentInput(content);
 		adph.clickAppDocumentSubmit();
+		ThreadTime.sleep(3000);
 	}
 }

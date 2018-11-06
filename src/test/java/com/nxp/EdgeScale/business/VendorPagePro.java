@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.VendorPageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class VendorPagePro {
 
@@ -24,11 +25,7 @@ public class VendorPagePro {
 	 */
 	public void createVendor(String name) {
 		vph.clickVendorCreateButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		vph.sendKeysVendorNameInput(name);
 		vph.clickVendorCreateSubmitInput();
 	}
@@ -52,22 +49,14 @@ public class VendorPagePro {
 	 */
 	public void editVendor(String name) {
 		vph.clickVendorEditButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		vph.sendKeysVendorNameInput(name);
 		vph.clickVendorCreateSubmitInput();
 	}
 
 	public void deleteVendor() {
 		vph.clickVendorDeleteButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		vph.clickVendorDeleteConfirm();
 	}
 

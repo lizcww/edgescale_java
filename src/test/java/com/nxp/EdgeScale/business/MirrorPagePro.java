@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.MirrorPageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class MirrorPagePro {
 
@@ -27,11 +28,7 @@ public class MirrorPagePro {
 	 */
 	public void createMirror(String name, String desc) {
 		mph.clickMirrorCreateButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		mph.sendKeysMirrorCreateNameInput(name);
 		mph.sendKeysMirrorCreateDescInput(desc);
 		mph.clickMirrorCreateSubmit();
@@ -57,11 +54,7 @@ public class MirrorPagePro {
 	 */
 	public void editMirror(String name, String desc) {
 		mph.clickMirrorEditButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		mph.sendKeysMirrorCreateNameInput(name);
 		mph.sendKeysMirrorCreateDescInput(desc);
 		mph.clickMirrorCreateSubmit();
@@ -72,11 +65,7 @@ public class MirrorPagePro {
 	 */
 	public void deleteMirror() {
 		mph.clickMirrorDeleteButton();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		mph.clickMirrorDeleteConfirm();
 	}
 

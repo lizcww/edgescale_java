@@ -9,9 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.CreateAppPageHandle;
-import com.nxp.EdgeScale.handle.CreateDevicePageHandle;
-import com.nxp.EdgeScale.handle.DevicePageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class CreateAppPagePro {
 	public CreateAppPageHandle caph;
@@ -27,48 +26,33 @@ public class CreateAppPagePro {
 	public void createApp(String appName, String desc, String imagePath, String registry, String imageName) {
 		caph.sendKeysAppNameInput(appName);
 		caph.sendKeysAppDescInput(desc);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
+		
 		caph.clickAppUploadIcon();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
+		
 		// 把上传图片的input显示出来
 		String Jscript = "arguments[0].style.display = 'block';";
 		JavascriptExecutor js = (JavascriptExecutor) caph.driver.driver;
 		js.executeScript(Jscript, caph.getAppUploadInput());
 		caph.sendKeysUploadInput(imagePath);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(2000);
+		
 		caph.clickSaveButton();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(2000);
+		
 		caph.clickNextButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
+		
 		caph.clickRegistryInput();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
+		
 		caph.clickRegistryList(registry);
+		ThreadTime.sleep(3000);
 		caph.sendKeysImageName(imageName);
+		ThreadTime.sleep(3000);
 		caph.clickSubmitButton();
+		ThreadTime.sleep(5000);
 	}
 
 	/**
@@ -82,5 +66,6 @@ public class CreateAppPagePro {
 		String right = caph.getPageRightNotice();
 		logger.info("device页面右边提示 ==== " + right);
 		assertTrue(right.contains(rightNotice));
+		ThreadTime.sleep(5000);
 	}
 }

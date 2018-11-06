@@ -1,18 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="false" thread-count="5">
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.nxp.EdgeScale.testcase.Login"/>
-      <class name="com.nxp.EdgeScale.testcase.Register"/>
-      <class name="com.nxp.EdgeScale.testcase.CreateDevice"/>
-      <class name="com.nxp.EdgeScale.testcase.Device"/>
-      <class name="com.nxp.EdgeScale.testcase.CreateApp"/>
-      <class name="com.nxp.EdgeScale.testcase.App"/>
-      <class name="com.nxp.EdgeScale.testcase.CreateSolution"/>
-      <class name="com.nxp.EdgeScale.testcase.Solution"/>
-      <class name="com.nxp.EdgeScale.testcase.Model"/>
-      <class name="com.nxp.EdgeScale.testcase.Vendor"/>
-    </classes>
-  </test> <!-- Test -->
+<suite name="Suite" parallel="false" thread-count="1">
+	<test thread-count="1" name="Test">
+		<groups>
+			<define name="manageUser">
+				<!-- <include name="createUser"/> 
+				<include name="changeUserSetting"/> -->
+			</define>
+
+			<define name="manageMirror">
+				<!-- <include name="createMirror"/> 
+				<include name="editMirror"/> 
+				<include name="deleteMirror"/> -->
+				<include name="findModel" />
+			</define>
+
+			<define name="manageVendor">
+				<!-- <include name="createVendor"/> 
+				<include name="editVendor"/> 
+				<include name="deleteVendor"/> -->
+				<include name="findModel" />
+			</define>
+
+			<define name="model">
+				<include name="createModel" />
+				<include name="findModel" />
+				<include name="editModel" />
+				<include name="deleteModel" />
+			</define>
+
+			<define name="device">
+				<include name="createDevice" />
+				<include name="addDeviceTag" />
+				<include name="deleteDeviceTag" />
+				<include name="bindDeviceTag" />
+				<include name="inactiveDevice" />
+				<include name="activeDevice" />
+				<include name="deleteDevice" />
+			</define>
+
+			<define name="app">
+				<include name="createApp" />
+				<include name="updateAppDocument" />
+				<include name="editAppInfo" />
+				<include name="addAppDocker" />
+				<!-- <include name="deployApp"/> 
+				<include name="deployPublicApp"/> 
+				<include name="appMultipleDeploy"/> -->
+				<include name="deleteApp" />
+			</define>
+
+			<!-- create solution will fail when the solution name has been used even 
+				the solution has been removed -->
+			<define name="solution">
+				<include name="createSolution" />
+				<include name="addSolutionTag" />
+				<include name="deleteSolutionTag" />
+				<include name="editSolution" />
+				<!-- <include name="downloadImage"/> 
+				<include name="deploySolution"/> 
+				<include name="deleteSolution"/> -->
+			</define>
+
+			<run>
+				<include name="login" />
+				<include name="register" />
+				<include name="chagePassword" />
+				
+				<include name="device" />
+				<include name="app" />
+				<include name="solution" />
+				<include name="model"/> 
+				
+				<!-- <include name="login"/> 
+				<include name="register"/> 
+				<include name="chagePassword"/> 
+				<include name="model"/> 
+				<include name="device"/> 
+				<include name="app"/> 
+				<include name="solution"/> 
+				<include name="manageMirror"/> 
+				<include name="manageVendor"/> 
+				<include name="manageUser"/> -->
+			</run>
+
+			<dependencies>
+				<group name="app" depends-on="device" />
+
+				<group name="solution" depends-on="app" />
+				
+				<group name="editModel" depends-on="createModel" />
+				<group name="findModel" depends-on="editModel createModel" />
+				<group name="deleteModel"
+					depends-on="findModel createModel editModel" />
+			</dependencies>
+
+		</groups>
+
+		<classes>
+			<class name="com.nxp.EdgeScale.testcase.Login" />
+			<class name="com.nxp.EdgeScale.testcase.Register" />
+			<class name="com.nxp.EdgeScale.testcase.ChangePassword" />
+
+			<class name="com.nxp.EdgeScale.testcase.CreateDevice" />
+			<class name="com.nxp.EdgeScale.testcase.Device" />
+
+			<class name="com.nxp.EdgeScale.testcase.CreateApp" />
+			<class name="com.nxp.EdgeScale.testcase.TestApp" />
+
+			<class name="com.nxp.EdgeScale.testcase.CreateSolution" />
+			<class name="com.nxp.EdgeScale.testcase.Solution" />
+
+			<class name="com.nxp.EdgeScale.testcase.CreateModel" />
+			<class name="com.nxp.EdgeScale.testcase.Model" />
+
+			<class name="com.nxp.EdgeScale.testcase.Vendor" />
+			<class name="com.nxp.EdgeScale.testcase.Mirror" />
+			<class name="com.nxp.EdgeScale.testcase.ManageUser" />
+		</classes>
+
+	</test> <!-- Test -->
 </suite> <!-- Suite -->

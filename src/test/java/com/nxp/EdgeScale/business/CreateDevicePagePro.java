@@ -8,8 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.CreateDevicePageHandle;
-import com.nxp.EdgeScale.handle.DevicePageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class CreateDevicePagePro {
 
@@ -33,20 +33,12 @@ public class CreateDevicePagePro {
 		cdph.sendKeysSN(SN);
 		cdph.clickIDNO();
 		cdph.clickModelInput();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		cdph.selectModel(modelName);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(3000);
 		cdph.clickSubmitButton();
+		ThreadTime.sleep(5000);
+		cdph.clickCancelDownload();
 
 	}
 

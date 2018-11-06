@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
@@ -19,7 +21,10 @@ import org.openqa.selenium.interactions.Actions;
 
 public class DriverBase {
 	public WebDriver driver;
+	private static Logger logger = Logger.getLogger(DriverBase.class);
+	
 	public DriverBase(String browser){
+		PropertyConfigurator.configure("log4j.properties");
 		SelectDriver selectDriver =new SelectDriver();
 		this.driver = selectDriver.driverName(browser);
 	}
@@ -46,6 +51,7 @@ public class DriverBase {
 	 * 封装定位一组elements的方法
 	 * */
 	public List<WebElement> findElements(By by){
+		logger.info("find " + by.toString() + "from " + driver.getCurrentUrl());
 		return driver.findElements(by);
 	}
 	
@@ -113,6 +119,7 @@ public class DriverBase {
      * 关闭浏览器 
      * */
     public void close(){
+    	logger.info("Close driver!");
     	driver.close();
     }
     /**

@@ -40,6 +40,10 @@ public class CreateDevicePage extends BasePage {
 	public WebElement getSubmitButton() {
 		return element(GetByLocator.getLocator("create_device_submit_button"));
 	}
+	
+	public WebElement getCancelDownloadCertificate() {
+		return element(GetByLocator.getLocator("create_device_cancel_download_certificate"));
+	}
 
 	public WebElement getNotice() {
 		return element(GetByLocator.getLocator("login_noitce"));

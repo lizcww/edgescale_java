@@ -96,8 +96,8 @@ public class DevicePageHandle {
 	/**
 	 * 点击device添加tag按钮
 	 */
-	public void clickDeviceNewTagButton() {
-		dp.click(dp.getDeviceNewTagButton());
+	public void clickDeviceNewTagButton(int device_num) {
+		dp.click(dp.getDeviceNewTagButton(device_num));
 	}
 
 	/**
@@ -151,6 +151,13 @@ public class DevicePageHandle {
 	 */
 	public void clickDeviceBindTagButton() {
 		dp.click(dp.getBindTagButton());
+	}
+	
+	/**
+	 * click bindtag input
+	 */
+	public void clickBindTagInput(String tag) {
+		dp.click(dp.getBindTagInput());
 	}
 
 	/**

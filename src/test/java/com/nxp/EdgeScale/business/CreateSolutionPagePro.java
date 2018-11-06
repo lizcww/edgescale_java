@@ -2,14 +2,13 @@ package com.nxp.EdgeScale.business;
 
 import static org.testng.Assert.assertTrue;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.nxp.EdgeScale.base.DriverBase;
 import com.nxp.EdgeScale.handle.CreateSolutionPageHandle;
-import com.nxp.EdgeScale.handle.DevicePageHandle;
 import com.nxp.EdgeScale.util.GetByLocator;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class CreateSolutionPagePro {
 
@@ -30,35 +29,29 @@ public class CreateSolutionPagePro {
 	 * @param imageUrl
 	 */
 	public void createSolution(String modelName, String solutionName, String version, String imageUrl) {
+		//Basic info
 		csph.clickModelNameInput();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(7000);		
 		csph.clickModelNameInputList(modelName);
+		ThreadTime.sleep(5000);	
 		csph.sendKeysSolutionNameInput(solutionName);
+		ThreadTime.sleep(5000);	
 		csph.sendKeysVersionInput(version);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);		
 		csph.clickVersionInputList(version);
-		csph.clickNextButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		csph.clickNext2Button();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);	
+		csph.clickNextButton();		
+		ThreadTime.sleep(5000);	
+		
+		//permission
+		csph.clickNext2Button();		
+		ThreadTime.sleep(5000);	
+		
+		//firmware
 		csph.sendKeysImageUrlInput(imageUrl);
+		ThreadTime.sleep(5000);	
 		csph.clickSubmitButton();
+		ThreadTime.sleep(5000);
 	}
 	
 	/**

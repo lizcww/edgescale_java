@@ -7,6 +7,7 @@ import com.nxp.EdgeScale.handle.AppEditInfoPageHandle;
 import com.nxp.EdgeScale.handle.AppPageHandle;
 import com.nxp.EdgeScale.handle.ApplyPageHandle;
 import com.nxp.EdgeScale.handle.CreateAppPageHandle;
+import com.nxp.EdgeScale.util.ThreadTime;
 
 public class AppEditInfoPagePro {
 
@@ -30,26 +31,16 @@ public class AppEditInfoPagePro {
 	 */
 	public void editAppInfo(String appName, String appDesc) {
 		aph.clickMyAppButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aph.clickAppDetailButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(7000);
 		aeiph.clickAppEditButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aeiph.sendKeysAppEditAppNameInput(appName);
 		aeiph.sendKeysAppEditAppDescInput(appDesc);
+		ThreadTime.sleep(2000);
 		aeiph.clickAppEditNextButton();
+		ThreadTime.sleep(2000);
 	}
 
 	/**
@@ -61,33 +52,21 @@ public class AppEditInfoPagePro {
 	 */
 	public void appAddDocker(String registry, String imageName, String version) {
 		aph.clickMyAppButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aph.clickAppDetailButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(7000);
 		aeiph.clickAppAddDcokerButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		caph.clickRegistryInput();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		caph.clickRegistryList(registry);
+		ThreadTime.sleep(1000);
 		caph.sendKeysImageName(imageName);
+		ThreadTime.sleep(1000);
 		caph.sendKeysCreateAppVersionInput(version);
+		ThreadTime.sleep(1000);
 		caph.clickCreateAppVersionInputList(version);
+		ThreadTime.sleep(5000);
 		aeiph.clickAppAddDcokerSubmitButton();
 	}
 
@@ -96,23 +75,11 @@ public class AppEditInfoPagePro {
 	 */
 	public void changeAppPermission() {
 		aph.clickMyAppButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aph.clickAppDetailButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aeiph.clickAppChangePermissionButton();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		ThreadTime.sleep(5000);
 		aeiph.clickAppChangePermissionCheckbox();
 		aeiph.clickAppChangePermissionSubmit();
 	}

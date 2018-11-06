@@ -49,6 +49,10 @@ public class CreateModelPageHandle {
 	public void clickModelVendorInputList(String vendor) {
 		cmp.click(cmp.getModelVendorInputList(vendor));
 	}
+	
+	public void clickModelPermissionPrivate() {
+		cmp.click(cmp.getModelPermissionPrivate());
+	}
 
 	public void clickModelSubmit() {
 		cmp.click(cmp.getModelSubmit());
